@@ -1,10 +1,8 @@
 import java.io.File
 
 fun main(args: Array<String>) {
-    when (args.size) {
-        2 -> M3uGenerator().findGroupsOfDiscs(File(args[0]), args[1])
-        else -> throw IllegalArgumentException("Supply 2 arguments")
-    }
+    require(args.size == 2) { "Supply 2 arguments" }
+    M3uGenerator().findGroupsOfDiscs(File(args[0]), args[1])
 }
 
 class M3uGenerator {
